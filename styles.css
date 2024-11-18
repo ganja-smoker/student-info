@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px; /* Added padding to the edges of the page */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    table-layout: fixed; /* This ensures column width is fixed */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* Set fixed widths for each remaining column */
+th:nth-child(1), td:nth-child(1) { width: 200px; }  /* Name */
+th:nth-child(2), td:nth-child(2) { width: 150px; }  /* Rank (CRL) */
+th:nth-child(3), td:nth-child(3) { width: 180px; }  /* Advance Roll No. */
+th:nth-child(4), td:nth-child(4) { width: 150px; }  /* City */
+th:nth-child(5), td:nth-child(5) { width: 150px; }  /* State */
+th:nth-child(6), td:nth-child(6) { width: 200px; }  /* Branch */
+th:nth-child(7), td:nth-child(7) { width: 150px; }  /* Category */
+
+/* Flex container to align text and arrows */
+th > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+/* Arrow Styling */
+.sort-arrow {
+    font-size: 12px;
+    visibility: hidden; /* Hide arrows initially */
+    margin-left: 8px; /* Add space between text and arrow */
+}
+
+.asc::before {
+    content: '▲'; /* Up arrow */
+}
+
+.desc::before {
+    content: '▼'; /* Down arrow */
+}
+
+/* Pagination buttons */
+#pagination {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+button:hover {
+    background-color: #A0522D;
+}
+
+#prevPage:disabled, #nextPage:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Search and Sortable Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student Data List</h1>
+    <input type="text" id="searchInput" oninput="searchData()" placeholder="Search..." />
+
+    <table>
+        <thead>
+            <tr>
+                <th onclick="sortTable('Name')">
+                    <div>Name <span class="sort-arrow" id="sortName"></span></div>
+                </th>
+                <th onclick="sortTable('Rank (CRL)')">
+                    <div>Rank (CRL) <span class="sort-arrow" id="sortRank"></span></div>
+                </th>
+                <th onclick="sortTable('Advance Roll No.')">
+                    <div>Advanced Roll No. <span class="sort-arrow" id="sortAdvance"></span></div>
+                </th>
+                <th onclick="sortTable('City')">
+                    <div>City <span class="sort-arrow" id="sortCity"></span></div>
+                </th>
+                <th onclick="sortTable('State')">
+                    <div>State <span class="sort-arrow" id="sortState"></span></div>
+                </th>
+                <th onclick="sortTable('Branch')">
+                    <div>Branch <span class="sort-arrow" id="sortBranch"></span></div>
+                </th>
+                <th onclick="sortTable('Category')">
+                    <div>Category <span class="sort-arrow" id="sortCategory"></span></div>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data rows will be inserted here -->
+        </tbody>
+    </table>
+
+    <div id="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Previous</button>
+        <button id="nextPage" onclick="changePage(1)">Next</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
